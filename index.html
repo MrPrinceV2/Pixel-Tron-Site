@@ -15,7 +15,54 @@
   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
   <path d="M9 12l2 2l4 -4"></path>
   <path d="M12 3a12 12 0 0 0 8.5 3a12 12 0 0 1 -8.5 15a12 12 0 0 1 -8.5 -15a12 12 0 0 0 8.5 -3"></path>
-</svg></div><div><h4 class="fw-bold">Secure</h4><p class="text-muted">We keep everything secure and make sure nobody hacks in.</p></div></div></div></div></div></div></section><section><div class="container py-4 py-xl-5" data-aos="fade-up"><div class="row"><div class="col-md-6"><h3 class="display-6 fw-bold pb-md-4">The best&nbsp;<span class="underline">uptime</span></h3></div><div class="col-md-6 pt-4"><p class="text-muted mb-4">We make sure to keep Pixel Tron up at least 99% of the time. <sup><em>(Not Guaranteed)</em></sup></p></div></div><div class="row gy-4 gy-md-0"><div class="col-md-6 d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-center"><div><div class="row gy-2 row-cols-1 row-cols-sm-2"><div class="col text-center text-md-start"><div class="d-flex justify-content-center align-items-center justify-content-md-start"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-tax fs-3 text-primary bg-warning">
+</svg></div><div><h4 class="fw-bold">Secure</h4><p class="text-muted">We keep everything secure and make sure nobody hacks in.</p></div></div></div></div></div><section class="py-4 py-xl-5"><div class="container"><div class="bg-light border rounded border-0 border-light d-flex flex-column justify-content-between align-items-center flex-lg-row p-4 p-lg-5"><div class="text-center text-lg-start py-3 py-lg-1"><h2 class="fw-bold mb-2"><strong>Subscribe to our newsletter</strong></h2><p class="mb-0">Get the <strong>latest updates</strong> on Pixel Tron.</p></div><html>
+  <head>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  </head>
+  <body class="container mt-5">
+    <form onsubmit="sendContact(event)">
+      <div class="mb-3">
+        <label for="emailInput" class="form-label">Enter your email address</label>
+        <input type="email" class="form-control" id="emailInput">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <script>
+      async function sendContact(ev) {
+        ev.preventDefault();
+
+        const senderEmail = document
+          .getElementById('emailInput').value;
+
+        const webhookBody = {
+          embeds: [{
+            title: 'Contact Form Submitted',
+            fields: [
+              { name: 'Sender', value: senderEmail }
+            ]
+          }],
+        };
+
+        const webhookUrl = 'https://discord.com/api/webhooks/1056252312923934761/w6_1eBKV5nl3x6Qx_ZNBv51KoWGGoS1x38_NUTZBUrR-lnISlluKx7DmD1Oo33qfNXvc';
+
+        const response = await fetch(webhookUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(webhookBody),
+        });
+
+        if (response.ok) {
+          alert('I have received your message!');
+        } else {
+          alert('There was an error! Try again later!');
+        }
+      }
+    </script>
+  </body>
+</html></div></div></section></div></section><section><div class="container py-4 py-xl-5" data-aos="fade-up"><div class="row"><div class="col-md-6"><h3 class="display-6 fw-bold pb-md-4">The best&nbsp;<span class="underline">uptime</span></h3></div><div class="col-md-6 pt-4"><p class="text-muted mb-4">We make sure to keep Pixel Tron up at least 99% of the time. <sup><em>(Not Guaranteed)</em></sup></p></div></div><div class="row gy-4 gy-md-0"><div class="col-md-6 d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-center"><div><div class="row gy-2 row-cols-1 row-cols-sm-2"><div class="col text-center text-md-start"><div class="d-flex justify-content-center align-items-center justify-content-md-start"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-tax fs-3 text-primary bg-warning">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
   <line x1="9" y1="14" x2="15" y2="8"></line>
   <circle cx="9.5" cy="8.5" r=".5" fill="currentColor"></circle>
